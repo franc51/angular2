@@ -11,4 +11,13 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'angular2';
+  name = "Francisc"
+
+  handleClick(event : Event){
+    console.log(event);
+  }
+  handleInput(event : Event){
+    console.log(event);
+
+  }
 }
