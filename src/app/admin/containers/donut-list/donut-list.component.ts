@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Donut } from '../../models/donut.model';
+import { DonutCardComponent } from "../../components/donut-card/donut-card.component";
+
 
 @Component({
-  selector: 'app-donut-list',
-  standalone: true,
-  imports: [],
-  templateUrl: './donut-list.component.html',
-  styleUrl: './donut-list.component.css'
+    selector: 'app-donut-list',
+    standalone: true,
+    templateUrl: './donut-list.component.html',
+    styleUrl: './donut-list.component.css',
+    imports: [DonutCardComponent]
 })
 export class DonutListComponent {
-
-  donut!: Donut;
   donuts!: any[];
 
   ngOnInit(): void {
@@ -18,28 +18,26 @@ export class DonutListComponent {
     this.donuts = [
       {
         id: '1',
-        name: 'Chocolate',
-        icon: '',
+        name: 'chocolate',
+        icon: 'chocolate',
         price: 119,
         description: 'For the pure chocofolic.'
       },
       {
         id: '2',
-        name: 'Vanilla',
-        icon: '',
+        name: 'vanilla',
+        icon: 'vanilla',
         price: 89,
         description: 'For the pure Vannilla flavour.'
       },
       {
         id: '3',
-        name: 'Strawberry',
-        icon: '',
+        name: 'strawberry',
+        icon: 'strawberry',
         price: 59,
         description: 'For the pure naturality of strawberry.'
       }
     ];
-
-    this.donut = this.donuts[0];
   }
 
 }
