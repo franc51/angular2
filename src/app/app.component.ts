@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { DonutListComponent } from "./admin/containers/donut-list/donut-list.component";
+import { DonutListComponent } from './admin/containers/donut-list/donut-list.component';
 
 @Component({
     selector: 'app-root',

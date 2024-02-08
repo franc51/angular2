@@ -1,8 +1,24 @@
-.app {
-  background-color: #ffc3c3;
-  border-radius: 8px;
-  max-width: 300px;
-  margin: 25px;
-  padding: 25px;
-  text-align: center;
+.donut-card {
+  display: flex;
+  align-items: center;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 0 15px ;
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: translate(+10px);
+    cursor: pointer;
+  }
+  .donut-card-name {
+    font-size: 1rem;
+  }
+  .donut-card-price {
+    color: #c14583;
+  }
+  .donut-card-icon {
+    width: 50px;
+    margin-right: 10px;
+
+  }
 }
