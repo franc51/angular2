@@ -1,24 +1,41 @@
 .donut-card {
   display: flex;
   align-items: center;
-  background-color: #f7f7f7;
+  background-color: #f8f2f2;
   border-radius: 5px;
   margin-bottom: 10px;
-  padding: 0 15px ;
+  padding: 0 20px ;
   transition: transform 0.2s ease-in-out;
   &:hover {
     transform: translate(+10px);
     cursor: pointer;
   }
   .donut-card-name {
-    font-size: 1rem;
+    font-size: 1.2rem;;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(30, 207, 219);
+    font-weight: bolder;
   }
   .donut-card-price {
-    color: #c14583;
+    color: #ff40d6;
+    font-weight: 900;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
   .donut-card-icon {
     width: 50px;
     margin-right: 10px;
 
+  }
+  .donut-card-label {
+    border: 1px solid #c14583;
+    border-radius: 4px;
+    padding: 0;
+    margin-left: 5px;
+    font-size: 1.2rem;
+    color: #c14583;
+  }
+  .description {
+    padding: 0;
+    margin: 0;
   }
 }

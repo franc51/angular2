@@ -1,10 +1,11 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { Donut } from '../../models/donut.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-donut-card',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './donut-card.component.html',
   styleUrl: './donut-card.component.css',
   encapsulation: ViewEncapsulation.Emulated,
@@ -12,5 +13,4 @@ import { Donut } from '../../models/donut.model';
 })
 export class DonutCardComponent {
   @Input() donut!: Donut;
-
 }

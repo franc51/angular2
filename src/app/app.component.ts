@@ -1,14 +1,21 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+
 import { DonutListComponent } from './admin/containers/donut-list/donut-list.component';
+import { DonutSingleComponent } from './admin/containers/donut-single/donut-single.component';
+import { DonutFormComponent } from './admin/components/donut-form/donut-form.component';
+
+import { FormsModule } from '@angular/forms';
+
+
 
 @Component({
     selector: 'app-root',
     standalone: true,
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
-    imports: [CommonModule, RouterOutlet, DonutListComponent]
+    imports: [FormsModule, CommonModule, RouterOutlet, DonutListComponent, DonutSingleComponent, DonutFormComponent]
 })
 export class AppComponent {
   title = 'angular2';
