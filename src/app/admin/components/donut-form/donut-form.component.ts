@@ -1,6 +1,7 @@
 import { Component, Input} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-donut-form',
@@ -18,4 +19,10 @@ export class DonutFormComponent {
     'strawberry.png',
     'vanilla.png'
   ]
+
+  handleSubmit(form: NgForm){
+    if(form.valid) {
+      console.log(form.value);
+    }
+  }
 }

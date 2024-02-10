@@ -1,20 +1,32 @@
 <div>
-  <form class="donut-form" #form="ngForm">
+  <form class="donut-form" #form="ngForm" (ngSubmit)="handleSubmit(form)">
     <label for="name" class="label" >
-      <span>Name</span>
-      <input type="text" name="name" class="input" ngModel required >
+      <span>Name </span>
+      <input type="text" name="name" class="input" minlength="5" required #name="ngModel" ngModel>
+      <ng-container *ngIf="name.invalid && name.touched">
+        <div class="error" *ngIf="name.errors?.minlength">
+            Minimum length for a name is 5!
+        </div>
+        <div class="error" *ngIf="name.errors?.required">
+          Name is required!
+      </div>
+      </ng-container>
     </label>
-
     <label for="icon" class="label">
       <span>Icon</span>
-      <select name="icon" class="input" ngModel>
+      <select name="icon" class="input" ngModel #name="ngModel">
           <option *ngFor="let icon of icons">{{ icon }}</option>
       </select>
     </label>
 
       <label for="name" class="label">
         <span>Price</span>
-        <input type="number" name="price" class="input" ngModel required>
+        <input type="number" name="price" class="input" ngModel required #price="ngModel">
+        <ng-container *ngIf="price.invalid && price.touched">
+          <div class="error" *ngIf="price.errors?.required">
+            Price is required
+        </div>
+        </ng-container>
       </label>
 
       <div class="donut-form-radios">
@@ -33,9 +45,15 @@
         </label>
         <label for="" class="label">
           <span>Description</span>
-          <input type="textarea" class="input" ngModel required>
+          <input type="textarea" class="input" ngModel required #description="ngModel">
+          <ng-container *ngIf="description.invalid && description.touched">
+            <div class="error" *ngIf="description.errors?.required">
+              Description is required
+          </div>
+          </ng-container>
         </label>
       </div>
+      <button type="submit" class="btn" [disabled]="form.invalid">Create</button>
 
   </form>
 </div>

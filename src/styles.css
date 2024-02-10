@@ -1,3 +1,8 @@
 body {
   background-color: rgb(255, 232, 232);
 }
+
+form .ng-invalid.ng-touched {
+  border-color: red;
+  background: #ffa7a762;
+}
