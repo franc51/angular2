@@ -4,9 +4,6 @@
       <span>Name </span>
       <input type="text" name="name" class="input" minlength="5" required #name="ngModel" ngModel>
       <ng-container *ngIf="name.invalid && name.touched">
-        <div class="error" *ngIf="name.errors?.minlength">
-            Minimum length for a name is 5!
-        </div>
         <div class="error" *ngIf="name.errors?.required">
           Name is required!
       </div>
@@ -14,9 +11,14 @@
     </label>
     <label for="icon" class="label">
       <span>Icon</span>
-      <select name="icon" class="input" ngModel #name="ngModel">
+      <select name="icon" class="input" ngModel #icon="ngModel">
           <option *ngFor="let icon of icons">{{ icon }}</option>
       </select>
+      <ng-container *ngIf="icon.invalid && icon.touched">
+        <div class="error" *ngIf="icon.errors?.required">
+          Icon is required!
+      </div>
+      </ng-container>
     </label>
 
       <label for="name" class="label">
@@ -24,7 +26,7 @@
         <input type="number" name="price" class="input" ngModel required #price="ngModel">
         <ng-container *ngIf="price.invalid && price.touched">
           <div class="error" *ngIf="price.errors?.required">
-            Price is required
+            Price is required!
         </div>
         </ng-container>
       </label>
@@ -32,28 +34,37 @@
       <div class="donut-form-radios">
         <p class="donut-form-radios-label label">Promo</p>
         <label for="">
-          <input type="radio" name="promo" [value]="undefined" ngModel required>
+          <input type="radio"
+                name="promo"
+                checked
+                ngModel>
           <span>None</span>
         </label>
         <label for="">
-          <input type="radio" name="promo" value="new" ngModel required>
+          <input type="radio" name="promo" value="new" ngModel>
           <span>New</span>
         </label>
         <label for="">
-          <input type="radio" name="promo" value="limited" ngModel required>
+          <input type="radio" name="promo" value="limited" ngModel>
           <span>Limited</span>
         </label>
+
         <label for="" class="label">
           <span>Description</span>
-          <input type="textarea" class="input" ngModel required #description="ngModel">
+          <textarea name="description" type="text" class="input" ngModel required #description="ngModel">
+            </textarea>
           <ng-container *ngIf="description.invalid && description.touched">
             <div class="error" *ngIf="description.errors?.required">
               Description is required
           </div>
           </ng-container>
         </label>
+        {{form.value | json}}
       </div>
       <button type="submit" class="btn" [disabled]="form.invalid">Create</button>
-
+      <button type="button" class="btn" (click)="form.resetForm()">Reset Form</button>
+      <div class="" *ngIf="form.valid && form.submitted">
+        Submitting...
+      </div>
   </form>
 </div>
