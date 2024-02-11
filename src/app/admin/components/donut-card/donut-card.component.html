@@ -1,17 +1,24 @@
 <div>
-  <div class="donut-card"
-  [style.border]="donut.promo ? '2px solid pink' : 'none'">
-    <img src="assets/img/{{donut.icon}}" alt="{{donut.name}}" class="donut-card-icon">
+  <div
+    class="donut-card"
+    [style.border]="donut.promo ? '2px solid pink' : 'none'"
+  >
+    <img
+      src="assets/img/{{ donut.icon }}"
+      alt="{{ donut.name }}"
+      class="donut-card-icon"
+    />
     <div class="">
-      <p class="donut-card-name"> {{ donut.name }}
+      <p class="donut-card-name">
+        {{ donut.name }}
         <ng-container [ngSwitch]="donut.promo">
           <span *ngSwitchCase="'new'" class="donut-card-label">NEW</span>
-          <span *ngSwitchCase="'limited'" class="donut-card-label">LIMITED</span>
+          <span *ngSwitchCase="'limited'" class="donut-card-label"
+            >LIMITED</span
+          >
         </ng-container>
       </p>
-      <p class="donut-card-price"> {{'$ ' + donut.price / 100 }} </p>
+      <p class="donut-card-price">{{ "$ " + donut.price / 100 }}</p>
     </div>
-
   </div>
 </div>
-

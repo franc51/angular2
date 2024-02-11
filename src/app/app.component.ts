@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { DonutListComponent } from './admin/containers/donut-list/donut-list.component';
 import { DonutSingleComponent } from './admin/containers/donut-single/donut-single.component';
@@ -8,24 +9,30 @@ import { DonutFormComponent } from './admin/components/donut-form/donut-form.com
 
 import { FormsModule } from '@angular/forms';
 
-
-
 @Component({
-    selector: 'app-root',
-    standalone: true,
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
-    imports: [FormsModule, CommonModule, RouterOutlet, DonutListComponent, DonutSingleComponent, DonutFormComponent]
+  selector: 'app-root',
+  standalone: true,
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  imports: [
+    FormsModule,
+    CommonModule,
+    RouterOutlet,
+    DonutListComponent,
+    DonutSingleComponent,
+    DonutFormComponent,
+    HttpClientModule,
+  ],
 })
 export class AppComponent {
   title = 'angular2';
-  name = "Francisc"
+  name = 'Francisc';
   newmessage!: string;
 
-  handleClick(event : Event){
+  handleClick(event: Event) {
     console.log(event);
   }
-  handleInput(event : Event){
+  handleInput(event: Event) {
     const { value } = event.target as HTMLInputElement;
     this.newmessage = value;
   }

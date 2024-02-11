@@ -1,11 +1,9 @@
-
-
 <div>
-
   <ng-container *ngIf="donuts.length; else nothing">
     <app-donut-card
-       *ngFor="let donut of donuts; trackBy: trackById"
-       [donut]="donut">
+      *ngFor="let donut of donuts; trackBy: trackById"
+      [donut]="donut"
+    >
     </app-donut-card>
   </ng-container>
 

@@ -9,7 +9,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './donut-card.component.html',
   styleUrl: './donut-card.component.css',
   encapsulation: ViewEncapsulation.Emulated,
-
 })
 export class DonutCardComponent {
   @Input() donut!: Donut;
